@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JARVIS</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at center,
+        #102a3b 0%,
+        #06121c 35%,
+        #02060a 75%,
+        #000000 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+    color: #dffaff;
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    font-size: 38px;
+    letter-spacing: 12px;
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 30px #008cff,
+        0 0 60px #0077ff;
+}
+
+.status {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #65eaff;
+
+    margin-bottom: 55px;
+}
+
+.reactor {
+    position: relative;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    background:
+        radial-gradient(circle,
+        #b9fbff 0%,
+        #29dfff 7%,
+        #075b83 18%,
+        #031521 40%,
+        #02070b 70%);
+
+    box-shadow:
+        0 0 15px #00eaff,
+        0 0 35px #00cfff,
+        0 0 80px #0077ff,
+        inset 0 0 35px #00eaff;
+
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+.reactor::before {
+    content: "";
+
+    position: absolute;
+
+    width: 205px;
+    height: 205px;
+
+    border-radius: 50%;
+
+    border: 3px solid #00eaff;
+
+    box-shadow:
+        0 0 15px #00eaff,
+        inset 0 0 15px #00eaff;
+
+    animation: spin 7s linear infinite;
+}
+
+.reactor::after {
+    content: "";
+
+    position: absolute;
+
+    width: 145px;
+    height: 145px;
+
+    border-radius: 50%;
+
+    border: 2px dashed #71f2ff;
+
+    box-shadow: 0 0 15px #00cfff;
+
+    animation: reverseSpin 4s linear infinite;
+}
+
+.core {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+
+    background: #eaffff;
+
+    box-shadow:
+        0 0 15px white,
+        0 0 35px #00ffff,
+        0 0 70px #008cff;
+
+    z-index: 5;
+}
+
+.tap {
+    margin-top: 55px;
+
+    font-size: 14px;
+    letter-spacing: 3px;
+
+    color: #6ca5b5;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.035);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes reverseSpin {
+    from {
+        transform: rotate(360deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="title">
+        JARVIS
+    </div>
+
+    <div class="status">
+        ONLINE
+    </div>
+
+    <div class="reactor" onclick="activate()">
+        <div class="core"></div>
+    </div>
+
+    <div class="tap">
+        TAP THE ARC REACTOR
+    </div>
+
+</div>
+
+<script>
+
+function activate() {
+
+    const status =
+        document.querySelector(".status");
+
+    status.innerText = "LISTENING...";
+
+    if (navigator.vibrate) {
+        navigator.vibrate(100);
+    }
+
+    setTimeout(() => {
+        status.innerText = "ONLINE";
+    }, 3000);
+
+}
+
+</script>
+
+</body>
+</html>
