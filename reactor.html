@@ -43,11 +43,6 @@ body {
         );
 }
 
-
-/* =========================
-   MAIN INTERFACE
-========================= */
-
 .interface {
     position: relative;
     width: 100vw;
@@ -59,11 +54,6 @@ body {
 
     overflow: hidden;
 }
-
-
-/* =========================
-   TOP INFORMATION
-========================= */
 
 .header {
     position: absolute;
@@ -93,11 +83,6 @@ body {
     opacity: 0.8;
 }
 
-
-/* =========================
-   STATUS
-========================= */
-
 .status {
     position: absolute;
 
@@ -119,13 +104,7 @@ body {
     z-index: 30;
 }
 
-
-/* =========================
-   HOLOGRAM
-========================= */
-
 .hologram {
-
     position: relative;
 
     width: min(88vw, 520px);
@@ -144,13 +123,7 @@ body {
         drop-shadow(0 0 60px rgba(255, 70, 0, .4));
 }
 
-
-/* =========================
-   CENTRAL CORE
-========================= */
-
 .core {
-
     position: absolute;
 
     width: 65px;
@@ -180,13 +153,7 @@ body {
         corePulse 1.4s infinite ease-in-out;
 }
 
-
-/* =========================
-   INNER RINGS
-========================= */
-
 .ring {
-
     position: absolute;
 
     border-radius: 50%;
@@ -196,9 +163,7 @@ body {
     pointer-events: none;
 }
 
-
 .ring1 {
-
     width: 130px;
     height: 130px;
 
@@ -214,9 +179,7 @@ body {
         spin 4s linear infinite;
 }
 
-
 .ring2 {
-
     width: 180px;
     height: 180px;
 
@@ -232,9 +195,7 @@ body {
         reverseSpin 6s linear infinite;
 }
 
-
 .ring3 {
-
     width: 240px;
     height: 240px;
 
@@ -250,9 +211,7 @@ body {
         spin 9s linear infinite;
 }
 
-
 .ring4 {
-
     width: 300px;
     height: 300px;
 
@@ -268,9 +227,7 @@ body {
         reverseSpin 12s linear infinite;
 }
 
-
 .ring5 {
-
     width: 365px;
     height: 365px;
 
@@ -286,9 +243,7 @@ body {
         spin 17s linear infinite;
 }
 
-
 .ring6 {
-
     width: 430px;
     height: 430px;
 
@@ -304,13 +259,7 @@ body {
         reverseSpin 22s linear infinite;
 }
 
-
-/* =========================
-   DIGITAL SEGMENTS
-========================= */
-
 .segments {
-
     position: absolute;
 
     width: 390px;
@@ -325,13 +274,7 @@ body {
         spin 25s linear infinite;
 }
 
-
-/* =========================
-   RADIAL LINES
-========================= */
-
 .radial {
-
     position: absolute;
 
     width: 470px;
@@ -368,13 +311,7 @@ body {
         reverseSpin 18s linear infinite;
 }
 
-
-/* =========================
-   OUTER DIGITAL FIELD
-========================= */
-
 .field {
-
     position: absolute;
 
     width: 500px;
@@ -411,13 +348,7 @@ body {
         spin 35s linear infinite;
 }
 
-
-/* =========================
-   HOLOGRAM PARTICLES
-========================= */
-
 .particles {
-
     position: absolute;
 
     width: 470px;
@@ -456,13 +387,7 @@ body {
         particleSpin 14s linear infinite;
 }
 
-
-/* =========================
-   CROSSHAIR
-========================= */
-
 .crosshair {
-
     position: absolute;
 
     width: 470px;
@@ -475,7 +400,6 @@ body {
 
 .crosshair::before,
 .crosshair::after {
-
     content: "";
 
     position: absolute;
@@ -490,7 +414,6 @@ body {
 }
 
 .crosshair::before {
-
     width: 100%;
     height: 1px;
 
@@ -499,7 +422,6 @@ body {
 }
 
 .crosshair::after {
-
     width: 1px;
     height: 100%;
 
@@ -507,13 +429,7 @@ body {
     top: 0;
 }
 
-
-/* =========================
-   ANIMATIONS
-========================= */
-
 @keyframes spin {
-
     from {
         transform: rotate(0deg);
     }
@@ -522,10 +438,8 @@ body {
         transform: rotate(360deg);
     }
 }
-
 
 @keyframes reverseSpin {
-
     from {
         transform: rotate(360deg);
     }
@@ -535,9 +449,7 @@ body {
     }
 }
 
-
 @keyframes particleSpin {
-
     from {
         transform: rotate(0deg) scale(1);
     }
@@ -551,32 +463,20 @@ body {
     }
 }
 
-
 @keyframes corePulse {
-
     0%,
     100% {
-
         transform: scale(1);
-
         opacity: .9;
     }
 
     50% {
-
         transform: scale(1.15);
-
         opacity: 1;
     }
 }
 
-
-/* =========================
-   LISTENING STATE
-========================= */
-
 .listening .core {
-
     animation:
         corePulse .5s infinite ease-in-out;
 
@@ -586,7 +486,6 @@ body {
         0 0 70px #ff6500,
         0 0 130px #ff3000;
 }
-
 
 .listening .ring1 {
     animation-duration: 1.5s;
@@ -600,13 +499,7 @@ body {
     animation-duration: 3s;
 }
 
-
-/* =========================
-   TAP EFFECT
-========================= */
-
 .tapFlash {
-
     position: absolute;
 
     width: 100px;
@@ -620,35 +513,25 @@ body {
         0 0 30px #ff7500,
         0 0 60px #ff4500;
 
-    animation: flash .7s ease-out forwards;
+    animation:
+        flash .7s ease-out forwards;
 
     pointer-events: none;
 
     z-index: 50;
 }
 
-
 @keyframes flash {
-
     from {
-
         transform: scale(.5);
-
         opacity: 1;
     }
 
     to {
-
         transform: scale(5);
-
         opacity: 0;
     }
 }
-
-
-/* =========================
-   SMALL SCREEN
-========================= */
 
 @media (max-width: 500px) {
 
@@ -731,15 +614,9 @@ body {
 </style>
 </head>
 
-
 <body>
 
 <div class="interface">
-
-
-    <!-- =====================
-         HEADER
-    ====================== -->
 
     <div class="header">
 
@@ -752,11 +629,6 @@ body {
         </div>
 
     </div>
-
-
-    <!-- =====================
-         HOLOGRAM
-    ====================== -->
 
     <div
         class="hologram"
@@ -790,11 +662,6 @@ body {
 
     </div>
 
-
-    <!-- =====================
-         STATUS
-    ====================== -->
-
     <div
         class="status"
         id="status"
@@ -802,17 +669,9 @@ body {
         TAP THE HOLOGRAM
     </div>
 
-
 </div>
 
-
 <script>
-
-/*
-=================================================
-JARVIS ACTIVATION
-=================================================
-*/
 
 function activateJarvis() {
 
@@ -822,11 +681,6 @@ function activateJarvis() {
     const status =
         document.getElementById("status");
 
-
-    /*
-    Create orange flash
-    */
-
     const flash =
         document.createElement("div");
 
@@ -835,41 +689,14 @@ function activateJarvis() {
 
     hologram.appendChild(flash);
 
-
-    /*
-    Activate listening visual state
-    */
-
     hologram.classList.add("listening");
 
     status.innerText =
-        "INITIALIZING JARVIS";
+        "LISTENING...";
 
-
-    /*
-    iPhone vibration
-    */
-
-    if (
-        navigator.vibrate
-    ) {
-
+    if (navigator.vibrate) {
         navigator.vibrate(100);
-
     }
-
-
-    /*
-    Open the iPhone Shortcut
-    */
-
-    window.location.href =
-        "shortcuts://run-shortcut?name=Jarvis";
-
-
-    /*
-    Return visual state
-    */
 
     setTimeout(function() {
 
@@ -884,19 +711,10 @@ function activateJarvis() {
 
 }
 
-
-/*
-=================================================
-PREVENT LONG-PRESS MENU
-=================================================
-*/
-
 document.addEventListener(
     "contextmenu",
     function(event) {
-
         event.preventDefault();
-
     }
 );
 
